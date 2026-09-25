@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <!-- Brand Green Background -->
+  <rect width="240" height="240" rx="36" fill="#258237"/>
+  
+  <!-- Outer Arch (Yellow) -->
+  <path d="M42 98 C65 62 175 62 198 98 C172 74 68 74 42 98 Z" fill="#F2CD00"/>
+  <!-- Middle Arch (Yellow) -->
+  <path d="M64 124 C82 96 158 96 176 124 C155 106 85 106 64 124 Z" fill="#F2CD00"/>
+  <!-- Inner Arch (Yellow) -->
+  <path d="M88 150 C100 132 140 132 152 150 C138 138 102 138 88 150 Z" fill="#F2CD00"/>
+
+  <!-- Precise Concentric Curved Radians for exact fidelity -->
+  <g fill="#F5D000">
+    <path d="M38 102 C68 58 172 58 202 102 L178 120 C154 88 86 88 62 120 Z"/>
+    <path d="M64 130 C84 102 156 102 176 130 L154 146 C140 126 100 126 86 146 Z"/>
+    <path d="M90 156 C102 140 138 140 150 156 L134 168 C126 158 114 158 106 168 Z"/>
+  </g>
+
+  <!-- RIMATEL Text -->
+  <text x="120" y="206" text-anchor="middle" font-family="'Times New Roman', 'Playfair Display', Georgia, serif" font-weight="900" font-size="34" letter-spacing="1.5" fill="#FFFFFF">RIMATEL</text>
+</svg>
