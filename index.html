@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ريماتل (RIMATEL) | جيلٌ جديد.. اتصالٌ سديد.. ورقمٌ فريد (5G)</title>
+  <meta name="description" content="شركة ريماتل (RIMATEL) الرائدة في موريتانيا: ألياف بصرية فائقة السرعة، وباقات ساوي اللاسلكية، وخطوط الجيل الخامس 5G بمفتاح الرقم 7." />
+  
+  <!-- Modern Google Fonts: Alexandria & Cairo for Arabic, Plus Jakarta Sans & Outfit for Latin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background glow layers -->
+  <div class="ambient-glow glow-top" aria-hidden="true"></div>
+  <div class="ambient-glow glow-center" aria-hidden="true"></div>
+  <div class="ambient-glow glow-bottom" aria-hidden="true"></div>
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Interactive 3D Canvas for ambient cyber particles & light caustics -->
+  <canvas id="ambient-canvas" class="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" id="brand-logo" aria-label="RIMATEL Home">
+        <div class="logo-symbol">
+          <img src="assets/rimatel_logo.svg" alt="RIMATEL Logo" class="rimatel-logo-img" id="logo-img" />
+        </div>
+        <span class="brand-name" id="brand-text">RIMATEL</span>
+      </a>
+
+      <!-- Center Desktop Navigation Links -->
+      <nav class="nav-links" id="nav-links" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active" id="nav-home">الرئيسية</a>
+        <a href="#about" class="nav-link" id="nav-about">عن ريماتل</a>
+        <a href="#fibre" class="nav-link" id="nav-fibre">فايبر أوبتيك</a>
+        <a href="#sawi" class="nav-link" id="nav-sawi">خدمة ساوي</a>
+        <a href="#num7" class="nav-link" id="nav-num7">أرقام 7 (5G)</a>
+        <a href="#app-sedad" class="nav-link" id="nav-faq">تطبيق السداد</a>
+      </nav>
+
+      <!-- Right Nav Actions -->
+      <div class="nav-actions">
+        
+        <!-- Language Switcher with Globe Icon -->
+        <div class="lang-selector-wrapper">
+          <div class="lang-selector" id="lang-selector" role="group" aria-label="Language Selector">
+            <svg class="globe-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <button type="button" class="lang-btn active" data-lang="ar" aria-label="العربية">AR</button>
+            <span class="lang-divider">|</span>
+            <button type="button" class="lang-btn" data-lang="en" aria-label="English">EN</button>
+            <span class="lang-divider">|</span>
+            <button type="button" class="lang-btn" data-lang="fr" aria-label="Français">FR</button>
+          </div>
+        </div>
+
+        <!-- Get Started / CTA Button -->
+        <a href="#fibre" class="btn-primary" id="get-started-btn">
+          <span id="cta-btn-text">اكتشف العروض</span>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer-content">
+      <nav class="mobile-nav-links">
+        <a href="#hero" class="mobile-nav-link active" id="mob-nav-home">الرئيسية</a>
+        <a href="#about" class="mobile-nav-link" id="mob-nav-about">عن ريماتل</a>
+        <a href="#fibre" class="mobile-nav-link" id="mob-nav-fibre">فايبر أوبتيك FTTH</a>
+        <a href="#sawi" class="mobile-nav-link" id="mob-nav-sawi">خدمة ساوي (SAWI)</a>
+        <a href="#num7" class="mobile-nav-link" id="mob-nav-num7">أرقام 7 والجيل الخامس</a>
+        <a href="#app-sedad" class="mobile-nav-link" id="mob-nav-faq">تطبيق السداد</a>
+      </nav>
+      
+      <div class="mobile-drawer-footer">
+        <div class="mobile-lang-title" id="mob-lang-label">اختر اللغة / Select Language:</div>
+        <div class="mobile-lang-options">
+          <button type="button" class="mobile-lang-btn active" data-lang="ar">العربية (AR)</button>
+          <button type="button" class="mobile-lang-btn" data-lang="en">English (EN)</button>
+          <button type="button" class="mobile-lang-btn" data-lang="fr">Français (FR)</button>
+        </div>
+        <a href="#fibre" class="btn-primary mobile-cta-btn" id="mob-cta-btn">اكتشف العروض</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SCROLL TRACK (400vh) -->
+    <section class="hero-scroll-container" id="hero-scroll">
+      <div class="hero-sticky-viewport" id="hero-sticky-viewport">
+        
+        <!-- Pinned Full-Screen Cinematic Sequence Canvas -->
+        <canvas id="sequence-canvas" class="sequence-canvas" aria-label="Cinematic 3D animation"></canvas>
+        
+        <!-- Vignettes & Ambient Overlays -->
+        <div class="canvas-vignette-top" aria-hidden="true"></div>
+        <div class="canvas-vignette-bottom" aria-hidden="true"></div>
+        <div class="visual-glow-halo" aria-hidden="true"></div>
+
+        <!-- Hero Content Overlay (scrolls and fades as sequence unfolds) -->
+        <div class="hero-content" id="hero-content">
+          
+          <!-- Top Pill Badge -->
+          <div class="badge-wrapper">
+            <div class="hero-pill-badge" id="hero-badge" data-service="5g" role="button" tabindex="0">
+              <span class="badge-glow-dot"></span>
+              <span id="badge-text">رخصة الجيل الخامس 5G • شبكة المستقبل، وأفقُ الأمل</span>
+            </div>
+          </div>
+
+          <!-- Oversized Futuristic Editorial Title -->
+          <h1 class="hero-title" id="hero-title">
+            <span class="title-line" id="title-line-1">جيلٌ جديد.. اتصالٌ سديد</span>
+            <span class="title-line title-line-2" id="title-line-2">ورقمٌ فريد (7)</span>
+          </h1>
+
+          <!-- Hero Subtitle with rich Rimatel overview -->
+          <p class="hero-subtitle" id="hero-subtitle">
+            شركة ريماتل (RIMATEL) الرائدة في موريتانيا: نصلك بأسرع أليافٍ بصرية (FTTH)، ونمنحك أوفى باقات "ساوي" اللاسلكية، مع خطوط الجيل الخامس الفائقة بمفتاح الرقم (7).. سرعةٌ تُبهر، وجودةٌ تزهر، واتصالٌ لا يفتر.
+          </p>
+
+          <!-- Interactive Coverage / Service Finder Bar -->
+          <div class="ai-prompt-bar">
+            <div class="prompt-input-inner">
+              <svg class="sparkle-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/>
+              </svg>
+              <input 
+                type="text" 
+                id="prompt-input" 
+                placeholder="تحقق من تغطية الفايبر السريع أو باقة ساوي في حيك البديع بنواكشوط..." 
+                autocomplete="off"
+              />
+              <button class="generate-btn" id="generate-btn" type="button">
+                <span id="search-btn-text">فحص التغطية</span>
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Interactive Quick Topic Tags -->
+            <div class="prompt-tags" id="prompt-tags">
+              <button type="button" class="prompt-tag" data-service="fibre">✦ فايبر أوبتيك • سرعةٌ لا تنقطع</button>
+              <button type="button" class="prompt-tag" data-service="sawi">✦ باقة ساوي • إنترنتٌ بلا حدود يتسع</button>
+              <button type="button" class="prompt-tag" data-service="5g">✦ خطوط الجيل الخامس (7) • اتصالٌ بالكمال يرتفع</button>
+              <button type="button" class="prompt-tag" data-service="app">✦ تطبيق السداد • تجديدٌ فوريٌّ يُمتع</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Cinematic Frame-Synchronized Scroll Captions -->
+        <div class="cinematic-caption-wrapper" id="cinematic-caption-wrapper" aria-live="polite">
+          <div class="cinematic-caption-card" id="cinematic-caption-card">
+            <p class="cinematic-caption-text" id="cinematic-caption-text">خدماتٌ فائقة.. وسرعاتٌ بارقة</p>
+          </div>
+        </div>
+
+        <!-- Frosted Glass Mouse Scroll Indicator at bottom of viewport -->
+        <a href="#services-overview" class="scroll-indicator" id="scroll-indicator" aria-label="Scroll down to explore Rimatel services">
+          <div class="mouse-icon">
+            <div class="mouse-wheel"></div>
+          </div>
+          <span class="scroll-hint" id="scroll-hint">مرر للأسفل.. واستكشف المستقبل</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- RIMATEL SERVICES & HIGHLIGHTS GRID SECTION -->
+    <section class="services-overview-section" id="services-overview">
+      <div class="section-container">
+        
+        <div class="section-header">
+          <span class="section-badge" id="sec-badge">بنيةٌ رقمية متينة.. لنهضةٍ وطنية مكينة</span>
+          <h2 class="section-title" id="sec-title">حلولُ اتصالٍ تواكب الغد.. وتمدُّ الجسورَ بلا حد</h2>
+          <p class="section-subtitle" id="sec-subtitle">
+            نسدُّ الفجوة الرقمية، وندعم التنمية الوطنية في موريتانيا، عبر أحدث شبكات الجيل الخامس والألياف البصرية الذكية.
+          </p>
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="cards-grid">
+          
+          <!-- Card 1: 5G & 7 Numbers -->
+          <article class="glass-card highlight-card" data-service="5g">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <span class="card-number-badge">7</span>
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="card-svg">
+                <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                <line x1="12" y1="20" x2="12.01" y2="20"></line>
+              </svg>
+            </div>
+            <span class="card-tag" id="card-tag-1">رخصة 5G • انطلاقة الهوية</span>
+            <h3 class="card-title" id="card-title-1">أرقامٌ تبدأ بـ (7) لآفاقٍ ذكية</h3>
+            <p class="card-desc" id="card-desc-1">
+              أطلقت ريماتل في أغسطس 2026 هويتها المتجددة وخطوطها بمفتاح (7)؛ رمزاً للكمال، وبشرى بالوفرة والجمال، وفق 3 قيم: اتصالٌ ممتد، وجودةٌ تعتمد، وقيمٌ تواكب المستقبل وتستجد.
+            </p>
+            <div class="card-footer">
+              <span class="card-learn-more" id="card-btn-1">تفاصيل العرض ←</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Fibre Optique (FTTH) -->
+          <article class="glass-card" data-service="fibre">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="card-svg">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+              </svg>
+            </div>
+            <span class="card-tag" id="card-tag-2">ثباتٌ مطلق • وتدفقٌ أسرع</span>
+            <h3 class="card-title" id="card-title-2">خدمة فايبر أوبتيك (FTTH)</h3>
+            <p class="card-desc" id="card-desc-2">
+              إنترنتٌ فائق الثبات عبر كابلات الألياف البصرية الممتدة للبيوت والمنشآت. تدفقٌ متواصل للبث عالي الدقة والألعاب دون انقطاع، مع عروض تركيب دورية وأسعار في متناول الجميع واستطاع.
+            </p>
+            <div class="card-footer">
+              <span class="card-learn-more" id="card-btn-2">تفاصيل الفايبر ←</span>
+            </div>
+          </article>
+
+          <!-- Card 3: SAWI Wireless Broadband -->
+          <article class="glass-card" data-service="sawi">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="card-svg">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <span class="card-tag" id="card-tag-3">حريةٌ لاسلكية • وسرعةٌ وفية</span>
+            <h3 class="card-title" id="card-title-3">باقة ساوي (SAWI) اللامحدودة</h3>
+            <p class="card-desc" id="card-desc-3">
+              إنترنت لاسلكي مرن عبر أحدث أجهزة الراوتر والواي فاي، صُمم ليمنح الأسر والأفراد اتصالاً مفتوحاً بأوفر الأسعار، وتجديداً سهلاً من الهاتف بلمسة زر واستقرار.
+            </p>
+            <div class="card-footer">
+              <span class="card-learn-more" id="card-btn-3">تفاصيل ساوي ←</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Sedad Payment & Rimatel App -->
+          <article class="glass-card" data-service="app">
+            <div class="card-glow"></div>
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="card-svg">
+                <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+            </div>
+            <span class="card-tag" id="card-tag-4">دفعٌ رقمي • وأمانٌ محمي</span>
+            <h3 class="card-title" id="card-title-4">تطبيق ريماتل والدفع عبر "السداد"</h3>
+            <p class="card-desc" id="card-desc-4">
+              اشحن رصيدك وجدد باقتك في ثوانٍ معدودات، عبر تطبيق ريماتل وشريكنا "السداد" مع خصومات حصرية وتسهيلات، لتنعم بخدمة سلسة وراحةٍ في كل الأوقات.
+            </p>
+            <div class="card-footer">
+              <span class="card-learn-more" id="card-btn-4">طرق الدفع ←</span>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT RIMATEL & STRATEGIC VISION SECTION -->
+    <section class="about-section" id="about">
+      <div class="section-container about-grid">
+        <div class="about-text-col">
+          <span class="section-badge" id="abt-badge">التأسيس والانطلاقة (2021 - 2022)</span>
+          <h2 class="about-heading" id="abt-title">عن شركة ريماتل • صرحُ الاتصال والأمانيا</h2>
+          <p class="about-description" id="abt-desc-1">
+            شركة ريماتل (RIMATEL) هي شركة اتصالات موريتانية رائدة في نواكشوط، متخصصة في خدمات الإنترنت والحلول الرقمية؛ تهدف إلى سد الفجوة الرقمية، ودعم التنمية الاجتماعية والاقتصادية، عبر تقديم خدمات اتصال مبتكرة ترتقي بالطموح وتلبي كل حاجةٍ وروح.
+          </p>
+          <p class="about-description" id="abt-desc-2">
+            وفي مايو 2026، وقّعت ريماتل دفتر شروط رخصة الجيل الخامس (5G)؛ لتخطو خطوة استراتيجية نحو تمكين الحوسبة السحابية، وإنترنت الأشياء، وبناء صروح البيانات المستقبلية.
+          </p>
+
+          <div class="values-pill-row">
+            <div class="value-item">
+              <span class="value-dot"></span>
+              <span class="value-label" id="val-1">اتصالٌ ممتد • يفي بالعهد</span>
+            </div>
+            <div class="value-item">
+              <span class="value-dot"></span>
+              <span class="value-label" id="val-2">جودةٌ متكاملة • ورعايةٌ شاملة</span>
+            </div>
+            <div class="value-item">
+              <span class="value-dot"></span>
+              <span class="value-label" id="val-3">قيمٌ تواكب المستقبل • لغدٍ أجمل</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-visual-col">
+          <div class="stats-glass-box">
+            <div class="stat-item">
+              <span class="stat-number">5G</span>
+              <span class="stat-label" id="stat-1-label">رخصة 5G الموقعة • عهدٌ لنهضةٍ مُشرعة (مايو 2026)</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">7</span>
+              <span class="stat-label" id="stat-2-label">مفتاح 7 الرنان • كمالٌ واستمرارٌ وأمان</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">FTTH</span>
+              <span class="stat-label" id="stat-3-label">ألياف الفايبر المتطورة • في كل دارٍ ومؤسسة معتبرة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Interactive Service Detail Modal Card -->
+  <div class="service-modal-backdrop" id="service-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="service-modal-card">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <span class="modal-badge" id="modal-service-badge">ريماتل 5G</span>
+      <h3 class="modal-title" id="modal-service-title">خدمة ريماتل</h3>
+      <div class="modal-body" id="modal-service-body">
+        <!-- Dynamically injected via script.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-primary" id="modal-action-btn">طلب الخدمة الآن</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="logo-symbol small">
+          <img src="assets/rimatel_logo.svg" alt="RIMATEL Logo" class="rimatel-logo-img" />
+        </div>
+        <span class="brand-name">RIMATEL</span>
+        <p class="footer-tagline" id="footer-tagline">جيلٌ جديد.. اتصالٌ سديد.. ورقمٌ فريد</p>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy" id="footer-copy">© 2026 شركة ريماتل (RIMATEL) - شريان الاتصال الرقمي في موريتانيا. جميع الحقوق محفوظة.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
